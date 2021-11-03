@@ -1,19 +1,44 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
     <head>
-        <meta charset="UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="css/general.css">
-        <title>Empleados</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <title>Operaciones CRUD Orientado a Objetos</title>
     </head>
-    <body>
-        <nav>
-            <h1>BASE DE DATOS EMPLEADOS</h1>
-            <ul>
-                <a href="alta.php"><li>Dar de alta</li></a>
-                <a href="listado.php"><li>Listar empleados</li></a>
-            </ul>
-        </nav>
+    <body class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 m-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Formulario Empleados</h2>
+                        </div>
+                            <div class="card-body">
+                                <form method="POST">
+                                    <input type="text" name="DNI" placeholder="DNI" class="form-control mb-2">
+                                    <input type="text" name="Nombre" placeholder="Nombre" class="form-control mb-2">
+                                    <input type="email" name="Correo" placeholder="Correo" class="form-control mb-2">
+                                    <input type="tel" name="Telefono" placeholder="Telefono" size="9" class="form-control mb-2">
+                            </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success" name="btn_save">Guardar</button>
+                        </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </body>
 </html>
+
+<!--
+IdEmpleado tinyint UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+DNI char(9) NOT NULL UNIQUE,
+Nombre varchar(70) NOT NULL,
+Correo varchar(100) NULL,
+Telefono char(9) NOT NULL
+);-->
