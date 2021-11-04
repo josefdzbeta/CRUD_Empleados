@@ -16,6 +16,7 @@
                 $Nombre = $db->comprobar($_POST['Nombre']);
                 $Correo = $db->comprobar($_POST['Correo']);
                 $Telefono = $db->comprobar($_POST['Telefono']);
+                $id = $db->comprobar($_POST['IdEmpleado']);
 
                 if($this->introducirDatos($DNI, $Nombre, $Correo, $Telefono)){
                     echo '<div class="alert alert-success">Los datos han sido guardados </div>';
@@ -24,11 +25,11 @@
                 }
             }    
         }
-        //Insertar datos en la base de datos utilizando Query
+        //Insertar datos en la base de datos 
         function introducirDatos($a,$b,$c,$d){
             global $db;
-            $query = "INSERT INTO empleados (DNI, Nombre, Correo, Telefono) VALUES ('$a','$b','$c','$d')";
-            $resultado = mysqli_query($db->connection,$query);
+            $consulta = "INSERT INTO empleados (DNI, Nombre, Correo, Telefono) VALUES ('$a','$b','$c','$d')";
+            $resultado = mysqli_query($db->connection,$consulta);
 
             if($resultado){
                 return true;
@@ -40,10 +41,18 @@
         public function mostrarDatos(){
 
             global $db;
-            $query = "SELECT * FROM empleados";
-            $resultado =  mysqli_query($db->connection, $query);
+            $consulta = "SELECT * FROM empleados";
+            $resultado =  mysqli_query($db->connection, $consulta);
             return $resultado;
 
+        }
+
+        //Conseguir dato específico para poder editar
+        public function conseguirDato($id){
+            global $db;
+            $consulta = "SELECT * FROM empleados WHERE IdEmpleado='$id' ";
+            $datos = mysqli_query($db->connection,$consulta);
+            return $datos;
         }
 
     }

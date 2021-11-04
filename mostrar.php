@@ -2,11 +2,9 @@
     require_once('./config/dbconfig.php');
     $db = new operaciones();
     $resultado = $db->mostrarDatos();
-
-
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,8 +38,8 @@
                                     <td><?php echo $datos['Nombre'] ?></td>
                                     <td><?php echo $datos['Correo'] ?></td>
                                     <td><?php echo $datos['Telefono'] ?></td>
-                                    <td><a href="modificar.php?U_DNI=<?php echo $datos['DNI']?>" class="btn btn-success">Editar</a></td>
-                                    <td><a href="borrar.php?D_DNI<?php echo $datos['DNI']?>" class="btn btn-danger">Borrar</a></td>
+                                    <td><a href="modificar.php?U_IdEmpleado=<?php echo $datos['IdEmpleado']?>" class="btn btn-success">Editar</a></td>
+                                    <td><a href="borrar.php?D_IdEmpleado<?php echo $datos['IdEmpleado']?>" class="btn btn-danger">Borrar</a></td>
                                 </tr>
                                     <?php
                                         }
