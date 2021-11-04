@@ -10,24 +10,34 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/bootstrap.css">
         <title>Operaciones CRUD Orientado a Objetos</title>
     </head>
+    <header>
+        <nav>
+
+        </nav>
+    </header>
+    <aside>
+
+    </aside>
+    <main>
+
+    </main>
     <body class="bg-dark">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="card mt-5">
                         <div class="card-header">
-                            <h2 class="text-center text-dark">Datos de Empleados</h2>
+                            <h2 class="text-center">Datos de Empleados</h2>
                         </div>
                         <div class="card-body">
-                            <table class="table table-bordered">
+                            <table class="table">
                                 <tr>
                                     <td>DNI</td>
                                     <td>Nombre</td>
                                     <td>Correo</td>
-                                    <td>Telefono</td>
+                                    <td>Teléfono</td>
                                     <td colspan="2">Operación</td>
                                 </tr>
                                 <tr>
@@ -44,13 +54,13 @@
                                     <?php
                                         }
                                     ?>
-                            
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <footer> &copy; Jose Angel Betancourt</footer>
     </body>
 </html>
 

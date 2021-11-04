@@ -12,7 +12,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
         <title>Operaciones CRUD Orientado a Objetos</title>
     </head>
     <body class="bg-dark">
@@ -31,16 +31,19 @@
                                     <input type="text" name="Nombre" placeholder="Nombre" class="form-control mb-2" required value="<?php echo $datos['Nombre']; ?>">
                                     <input type="email" name="Correo" placeholder="Correo" class="form-control mb-2" required value="<?php echo $datos['Correo']; ?>">
                                     <input type="tel" name="Telefono" placeholder="Telefono"  pattern="[0-9]{9}" class="form-control mb-2" required value="<?php echo $datos['Telefono']; ?>">
+                           
+                                    <div class="card-footer">
+                                        <button class="btn btn-success" name="actualizar">Actualizar</button>
+                                        </form>
+                                    </div>
+                                
                             </div>
-                        <div class="card-footer">
-                            <button class="btn btn-success" name="actualizar">Actualizar</button>
-                        </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+        <footer> &copy; Jose Angel Betancourt</footer>
     </body>
 </html>
 
