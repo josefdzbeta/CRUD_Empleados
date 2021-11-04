@@ -1,7 +1,7 @@
 <?php
     require_once('./config/dbconfig.php');
     $db = new operaciones();
-    $id = $_GET['U_ID'];
+    $id = $_GET['U_IdEmpleado'];
     $resultado = $db->editarDatos($id);
     $datos = mysqli_fetch_assoc($resultado);
 ?>
@@ -25,7 +25,7 @@
                             <?php $db->guardarDatos(); ?>
                             <div class="card-body">
                                 <form method="POST">
-                                    <input type="hidden" name="IdEmpleado" value="<?php $datos['IdEmpleado']; ?>" >
+                                    <input type="hidden" name="id" value="<?php $datos['id']; ?>" >
                                     <input type="text" name="DNI" placeholder="DNI" pattern="[0-9]{8}[A-Za-z]{1}" class="form-control mb-2" required value="<?php echo $datos['DNI']; ?> ">
                                     <input type="text" name="Nombre" placeholder="Nombre" class="form-control mb-2" required value="<?php echo $datos['Nombre']; ?>">
                                     <input type="email" name="Correo" placeholder="Correo" class="form-control mb-2" required value="<?php echo $datos['Correo']; ?>">
