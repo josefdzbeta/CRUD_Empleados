@@ -54,5 +54,25 @@
             return $datos;
         }
 
+        //Actualizar datos
+        public function actualizar(){
+
+            global $db;
+            
+            if (isset($_POST['actualizar'])){
+                
+                $id = $_POST['IdEmpleado'];
+                $DNI = $_POST['DNI'];
+                $Nombre = $_POST['Nombre'];
+                $Correo = $_POST['Correo'];
+                $Telefono = $_POST['Telefono'];
+
+                $consulta = "UPDATE empleados SET DNI='$DNI', Nombre='$Nombre', Correo = '$Correo', Telefono = '$Telefono' WHERE IdEmpleado = '$id'";
+                $datos = mysqli_query($db->connection,$consulta);
+                
+            }
+
+        }
+
     }
 ?>
