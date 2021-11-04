@@ -1,0 +1,61 @@
+<?php
+    require_once('./config/dbconfig.php');
+    $db = new operaciones();
+    $resultado = $db->mostrarDatos();
+
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <title>Operaciones CRUD Orientado a Objetos</title>
+    </head>
+    <body class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card mt-5">
+                        <div class="card-header">
+                            <h2 class="text-center text-dark">Datos de Empleados</h2>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>DNI</td>
+                                    <td>Nombre</td>
+                                    <td>Correo</td>
+                                    <td>Telefono</td>
+                                    <td colspan="2">Operación</td>
+                                </tr>
+                                <tr>
+                                    <?php
+                                        while($datos = mysqli_fetch_assoc($resultado)){
+                                    ?>
+                                    <td><?php echo $datos['DNI'] ?></td>
+                                    <td><?php echo $datos['Nombre'] ?></td>
+                                    <td><?php echo $datos['Correo'] ?></td>
+                                    <td><?php echo $datos['Telefono'] ?></td>
+                                    <td><a href="modificar.php?U_DNI=<?php echo $datos['DNI']?>" class="btn btn-success">Editar</a></td>
+                                    <td><a href="borrar.php?D_DNI<?php echo $datos['DNI']?>" class="btn btn-danger">Borrar</a></td>
+                                </tr>
+                                    <?php
+                                        }
+                                    ?>
+                            
+                            </table>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
+

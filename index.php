@@ -23,10 +23,10 @@
                             <?php $db->guardarDatos(); ?>
                             <div class="card-body">
                                 <form method="POST">
-                                    <input type="text" name="DNI" placeholder="DNI" pattern="[0-9]{8}[A-Za-z]{1}" title="Debe poner 8 números y una letra" class="form-control mb-2" require="required">
-                                    <input type="text" name="Nombre" placeholder="Nombre" class="form-control mb-2" require="required">
-                                    <input type="email" name="Correo" placeholder="Correo" class="form-control mb-2" require="required">
-                                    <input type="tel" name="Telefono" placeholder="Telefono" pattern="[0-9]{9}" class="form-control mb-2" require="required">
+                                    <input type="text" name="DNI" placeholder="DNI" pattern="[0-9]{8}[A-Za-z]{1}" class="form-control mb-2" required>
+                                    <input type="text" name="Nombre" placeholder="Nombre" class="form-control mb-2" required>
+                                    <input type="email" name="Correo" placeholder="Correo" class="form-control mb-2" required>
+                                    <input type="tel" name="Telefono" placeholder="Telefono" pattern="[0-9]{9}" class="form-control mb-2" required>
                             </div>
                         <div class="card-footer">
                             <button class="btn btn-success" name="guardar">Guardar</button>

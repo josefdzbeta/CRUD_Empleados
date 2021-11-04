@@ -34,6 +34,17 @@
                 return true;
             }else{
                 return false;
+            }
         }
+        //Ver Datos
+        public function mostrarDatos(){
+
+            global $db;
+            $query = "SELECT * FROM empleados";
+            $resultado =  mysqli_query($db->connection, $query);
+            return $resultado;
+
+        }
+
     }
-}
+?>
