@@ -35,7 +35,6 @@
                         <div class="card-footer">
                             <button class="btn btn-success" name="actualizar">Actualizar</button>
                         </form>
-
                         </div>
                     </div>
                 </div>
