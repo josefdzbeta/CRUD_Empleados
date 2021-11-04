@@ -13,7 +13,7 @@
         <title>Operaciones CRUD Orientado a Objetos</title>
     </head>
     <body class="bg-dark">
-        <header>
+        <header class="text-center">
            <h1>HEADER</h1>
         </header>
         <aside>
@@ -40,7 +40,7 @@
                                             <td>Nombre</td>
                                             <td>Correo</td>
                                             <td>Teléfono</td>
-                                            <td colspan="2">Operación</td>
+                                            <td colspan="2"></td>
                                         </tr>
                                         <tr>
                                             <?php
@@ -63,7 +63,7 @@
                     </div>
                 </div>
         </main>  
-        <footer><h1>&copy; Jose Angel Betancourt</h1></footer>
+        <footer class="text-center">&copy; Jose Angel Betancourt</footer>
     </body>
 </html>
 
