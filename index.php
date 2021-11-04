@@ -37,7 +37,7 @@
                 </div>
             </div>
         </div>
-        <footer>&copy; Jose Angel Betancourt</footer>
+        <footer><h1>&copy; Jose Angel Betancourt</h1></footer>
     </body>
 </html>
 
