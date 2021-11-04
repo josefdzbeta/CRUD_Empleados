@@ -4,7 +4,6 @@
 
     class dbconfig{
 
-        public $conexion;
 
         public function __construct()
         {
@@ -12,6 +11,7 @@
             $this->db_conexion();
         }
         public $connection;
+
         public function db_conexion(){
             $this->connection = mysqli_connect('localhost', 'root', '', 'empresa');
             if(mysqli_connect_error()){

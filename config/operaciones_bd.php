@@ -3,9 +3,8 @@
     require_once('./config/dbconfig.php');
 
     $db = new dbconfig();
-
     class operaciones extends dbconfig{
-
+        
         public function guardarDatos(){
 
             //Para hacer referencia a variable de ámbito global
@@ -47,11 +46,11 @@
         }
 
         //Conseguir dato específico para poder editar
-        public function editarDatos($id){
+        public function editarDatos($IdEmpleado){
             global $db;
-            $consulta = "SELECT * FROM empleados WHERE IdEmpleado='$id' ";
-            $datos = mysqli_query($db->connection,$consulta);
-            return $datos;
+            $consulta = "SELECT * FROM empleados WHERE IdEmpleado='$IdEmpleado' ";
+            $resultado = mysqli_query($db->connection,$consulta);
+            return $resultado;
         }
 
         //Actualizar datos
@@ -59,17 +58,16 @@
 
             global $db;
             
-            if (isset($_POST['actualizar'])){
+            if (isset($_POST['Editar'])){
                 
-                $id = $_POST['IdEmpleado'];
+                $IdEmpleado = $_POST['IdEmpleado'];
                 $DNI = $_POST['DNI'];
                 $Nombre = $_POST['Nombre'];
                 $Correo = $_POST['Correo'];
                 $Telefono = $_POST['Telefono'];
 
-                $consulta = "UPDATE empleados SET DNI='$DNI', Nombre='$Nombre', Correo = '$Correo', Telefono = '$Telefono' WHERE IdEmpleado = '$id'";
-                $datos = mysqli_query($db->connection,$consulta);
-                
+                $consulta = "UPDATE empleados SET $DNI = ['DNI'],$Nombre=['Nombre'], $Correo=['Correo'], $Telefono=['Telefono'] WHERE $IdEmpleado=['IdEmpleado'];";
+                $resultado =mysqli_query($db->connection,$consulta);                
             }
 
         }

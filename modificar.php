@@ -2,8 +2,8 @@
     require_once('./config/dbconfig.php');
     $db = new operaciones();
     $db->actualizar();
-    $id = $_GET['U_IdEmpleado'];
-    $resultado = $db->editarDatos($id);
+    $IdEmpleado = $_GET['IdEmpleado'];
+    $resultado = $db->editarDatos($IdEmpleado);
     $datos = mysqli_fetch_assoc($resultado);
 ?>
 <!DOCTYPE html>
@@ -15,35 +15,48 @@
         <link rel="stylesheet" href="css/style.css">
         <title>Operaciones CRUD Orientado a Objetos</title>
     </head>
-    <body class="bg-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 m-auto">
-                    <div class="card mt-5">
-                        <div class="card-header">
-                            <h2>Actualizar Datos</h2>
-                        </div>
-                            <?php $db->guardarDatos(); ?>
-                            <div class="card-body">
-                                <form method="POST">
-                                    <input type="hidden" name="id" value="<?php $datos['id']; ?>" >
-                                    <input type="text" name="DNI" placeholder="DNI" pattern="[0-9]{8}[A-Za-z]{1}" class="form-control mb-2" required value="<?php echo $datos['DNI']; ?>">
-                                    <input type="text" name="Nombre" placeholder="Nombre" class="form-control mb-2" required value="<?php echo $datos['Nombre']; ?>">
-                                    <input type="email" name="Correo" placeholder="Correo" class="form-control mb-2" required value="<?php echo $datos['Correo']; ?>">
-                                    <input type="tel" name="Telefono" placeholder="Telefono"  pattern="[0-9]{9}" class="form-control mb-2" required value="<?php echo $datos['Telefono']; ?>">
-                           
-                                    <div class="card-footer">
-                                        <button class="btn btn-success" name="actualizar">Actualizar</button>
+    <body>
+        <header class="text-center">
+           <h1>HEADER</h1>
+        </header>
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="index.php">Añadir</a></li>
+                    <li><a href="mostrar.php">Mostrar Empleados</a></li>
+                    <li><a href="modificar.php">Buscar</a></li>
+                </ul>
+            </nav>
+        </aside>  
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 m-auto">
+                        <div class="card mt-5">
+                            <div class="card-header">
+                                <h2>Actualizar Datos</h2>
+                            </div>
+                                <?php $db->guardarDatos(); ?>
+                                <div class="card-body">
+                                    <form method="POST">
+                                        <input type="hidden" name="IdEmpleado" value="<?php $datos['IdEmpleado']; ?>" >
+                                        <input type="text" name="dni" placeholder="DNI" value="<?php echo $datos['DNI']; ?>" pattern="[0-9]{8}[A-Za-z]{1}" class="form-control mb-2" required>
+                                        <input type="text" name="nombre" value="<?php echo $datos['Nombre']; ?>" placeholder="Nombre" class="form-control mb-2" required >
+                                        <input type="email" name="email" value="<?php echo $datos['Correo']; ?>"" placeholder="Correo" class="form-control mb-2" required ">
+                                        <input type="tel" name="telefono" value="<?php echo $datos['Telefono']; ?>" placeholder="Telefono"  pattern="[0-9]{9}" class="form-control mb-2" required>
+    
+                                        <div class="card-footer">
+                                            <button class="btn btn-success" name="Editar">Editar</button>   
                                         </form>
-                                    </div>
-                                
+                                        </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <footer> &copy; Jose Angel Betancourt</footer>
+        </main>
+        <footer class="text-center"> &copy; Jose Angel Betancourt</footer>
     </body>
 </html>
 

@@ -12,13 +12,25 @@
         <link rel="stylesheet" href="css/style.css">
         <title>Operaciones CRUD Orientado a Objetos</title>
     </head>
-    <body class="bg-dark">
+    <body>
+        <header class="text-center">
+           <h1>HEADER</h1>
+        </header>
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="index.php">Añadir</a></li>
+                    <li><a href="mostrar.php">Mostrar Empleados</a></li>
+                    <li><a href="modificar.php">Buscar</a></li>
+                </ul>
+            </nav>
+        </aside>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 m-auto">
                     <div class="card mt-5">
                         <div class="card-header">
-                            <h2>Formulario Empleados</h2>
+                            <h2>Alta Empleados</h2>
                         </div>
                             <?php $db->guardarDatos(); ?>
                             <div class="card-body">
@@ -37,7 +49,7 @@
                 </div>
             </div>
         </div>
-        <footer><h1>&copy; Jose Angel Betancourt</h1></footer>
+        <footer class="text-center">&copy; Jose Angel Betancourt</footer>
     </body>
 </html>
 

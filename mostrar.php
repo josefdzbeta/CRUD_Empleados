@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/style.css">
         <title>Operaciones CRUD Orientado a Objetos</title>
     </head>
-    <body class="bg-dark">
+    <body>
         <header class="text-center">
            <h1>HEADER</h1>
         </header>
@@ -21,7 +21,7 @@
                 <ul>
                     <li><a href="index.php">Añadir</a></li>
                     <li><a href="mostrar.php">Mostrar Empleados</a></li>
-                    <li><a href="modificar.php">Modificar</a></li>
+                    <li><a href="modificar.php">Buscar</a></li>
                 </ul>
             </nav>
         </aside>
@@ -50,8 +50,8 @@
                                             <td><?php echo $datos['Nombre'] ?></td>
                                             <td><?php echo $datos['Correo'] ?></td>
                                             <td><?php echo $datos['Telefono'] ?></td>
-                                            <td><a href="modificar.php?U_IdEmpleado=<?php echo $datos['IdEmpleado']?>" class="btn btn-success">Editar</a></td>
-                                            <td><a href="borrar.php?D_IdEmpleado<?php echo $datos['IdEmpleado']?>" class="btn btn-danger">Borrar</a></td>
+                                            <td><a href="modificar.php?IdEmpleado=<?php echo $datos['IdEmpleado']?>" class="btn btn-success">Editar</a></td>
+                                            <td><a href="borrar.php?D_ID<?php echo $datos['IdEmpleado']?>" class="btn btn-danger">Borrar</a></td>
                                         </tr>
                                             <?php
                                                 }
