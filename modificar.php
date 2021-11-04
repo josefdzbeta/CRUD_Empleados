@@ -2,7 +2,7 @@
     require_once('./config/dbconfig.php');
     $db = new operaciones();
     $id = $_GET['U_ID'];
-    $resultado = $db->conseguirDato($id);
+    $resultado = $db->editarDatos($id);
     $datos = mysqli_fetch_assoc($resultado);
 ?>
 <!DOCTYPE html>

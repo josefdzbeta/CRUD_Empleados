@@ -16,7 +16,6 @@
                 $Nombre = $db->comprobar($_POST['Nombre']);
                 $Correo = $db->comprobar($_POST['Correo']);
                 $Telefono = $db->comprobar($_POST['Telefono']);
-                $id = $db->comprobar($_POST['IdEmpleado']);
 
                 if($this->introducirDatos($DNI, $Nombre, $Correo, $Telefono)){
                     echo '<div class="alert alert-success">Los datos han sido guardados </div>';
@@ -48,7 +47,7 @@
         }
 
         //Conseguir dato específico para poder editar
-        public function conseguirDato($id){
+        public function editarDatos($id){
             global $db;
             $consulta = "SELECT * FROM empleados WHERE IdEmpleado='$id' ";
             $datos = mysqli_query($db->connection,$consulta);
