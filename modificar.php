@@ -2,8 +2,8 @@
     require_once('./config/dbconfig.php');
     $db = new operaciones();
     $db->actualizar();
-    $IdEmpleado = $_GET['IdEmpleado'];
-    $resultado = $db->editarDatos($IdEmpleado);
+    $id = $_GET['U_ID'];
+    $resultado = $db->editarDatos($id);
     $datos = mysqli_fetch_assoc($resultado);
 ?>
 <!DOCTYPE html>
@@ -39,16 +39,16 @@
                                 <?php $db->guardarDatos(); ?>
                                 <div class="card-body">
                                     <form method="POST">
-                                        <input type="hidden" name="IdEmpleado" value="<?php $datos['IdEmpleado']; ?>" >
-                                        <input type="text" name="dni" placeholder="DNI" value="<?php echo $datos['DNI']; ?>" pattern="[0-9]{8}[A-Za-z]{1}" class="form-control mb-2" required>
+                                        <input type="hidden" name="ID" value="<?php echo $datos['ID']; ?>" >
+                                        <input type="text" name="dni" value="<?php echo $datos['DNI']; ?>" placeholder="DNI"  pattern="[0-9]{8}[A-Za-z]{1}" class="form-control mb-2" required>
                                         <input type="text" name="nombre" value="<?php echo $datos['Nombre']; ?>" placeholder="Nombre" class="form-control mb-2" required >
-                                        <input type="email" name="email" value="<?php echo $datos['Correo']; ?>"" placeholder="Correo" class="form-control mb-2" required ">
+                                        <input type="email" name="email" value="<?php echo $datos['Correo']; ?>" placeholder="Correo" class="form-control mb-2" required ">
                                         <input type="tel" name="telefono" value="<?php echo $datos['Telefono']; ?>" placeholder="Telefono"  pattern="[0-9]{9}" class="form-control mb-2" required>
     
                                         <div class="card-footer">
-                                            <button class="btn btn-success" name="Editar">Editar</button>   
+                                            <button class="btn btn-success" name="Editar">Editar</button>  
+                                            </div> 
                                         </form>
-                                        </div>
                                 </div>
                             </div>
                         </div>

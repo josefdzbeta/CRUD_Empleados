@@ -46,28 +46,26 @@
         }
 
         //Conseguir dato específico para poder editar
-        public function editarDatos($IdEmpleado){
+        public function editarDatos($id){
             global $db;
-            $consulta = "SELECT * FROM empleados WHERE IdEmpleado='$IdEmpleado' ";
+            $consulta = "SELECT * FROM empleados WHERE ID ='$id' ";
             $resultado = mysqli_query($db->connection,$consulta);
             return $resultado;
         }
 
         //Actualizar datos
         public function actualizar(){
-
             global $db;
-            
-            if (isset($_POST['Editar'])){
-                
-                $IdEmpleado = $_POST['IdEmpleado'];
-                $DNI = $_POST['DNI'];
-                $Nombre = $_POST['Nombre'];
-                $Correo = $_POST['Correo'];
-                $Telefono = $_POST['Telefono'];
 
-                $consulta = "UPDATE empleados SET $DNI = ['DNI'],$Nombre=['Nombre'], $Correo=['Correo'], $Telefono=['Telefono'] WHERE $IdEmpleado=['IdEmpleado'];";
-                $resultado =mysqli_query($db->connection,$consulta);                
+            if(isset($_POST['Editar'])){
+                $ID = $_POST['ID'];
+                $DNI = $_POST['dni'];
+                $Nombre = $_POST['nombre'];
+                $Correo = $_POST['email'];
+                $Telefono = $_POST['telefono'];
+
+                $consulta = "UPDATE empleados SET DNI = '$DNI', Nombre = '$Nombre', Correo = '$Correo', Telefono='$Telefono' WHERE ID ='$ID';";
+                $resultado = mysqli_query($db->connection,$consulta);
             }
 
         }

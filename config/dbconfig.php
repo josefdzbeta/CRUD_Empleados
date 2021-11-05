@@ -21,8 +21,8 @@
         }
         //Escapa los caracteres especiales de una cadena para usarla en una sentencia SQL, tomando en cuenta el conjunto de caracteres actual de la conexión
         public function comprobar($a){
-            $devolver = mysqli_real_escape_string($this ->connection,$a);
-            return $devolver;
+            $resultado = mysqli_real_escape_string($this ->connection,$a);
+            return $resultado;
         }
     }
 

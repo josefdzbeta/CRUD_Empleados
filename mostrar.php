@@ -50,11 +50,11 @@
                                             <td><?php echo $datos['Nombre'] ?></td>
                                             <td><?php echo $datos['Correo'] ?></td>
                                             <td><?php echo $datos['Telefono'] ?></td>
-                                            <td><a href="modificar.php?IdEmpleado=<?php echo $datos['IdEmpleado']?>" class="btn btn-success">Editar</a></td>
-                                            <td><a href="borrar.php?D_ID<?php echo $datos['IdEmpleado']?>" class="btn btn-danger">Borrar</a></td>
+                                            <td><a href="modificar.php?U_ID=<?php echo $datos['ID']?>" class="btn btn-success">Editar</a></td>
+                                            <td><a href="borrar.php?D_ID<?php echo $datos['ID']?>" class="btn btn-danger">Borrar</a></td>
                                         </tr>
                                             <?php
-                                                }
+                                                };
                                             ?>
                                     </table>
                                 </div>
