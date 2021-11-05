@@ -10,7 +10,6 @@
             //El constructor será automáticamente cargado y la base de datos estará cargada.
             $this->db_conexion();
         }
-        public $connection;
 
         public function db_conexion(){
             $this->connection = mysqli_connect('localhost', 'root', '', 'empresa');

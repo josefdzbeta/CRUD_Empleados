@@ -19,7 +19,7 @@
         <aside>
             <nav>
                 <ul>
-                    <li><a href="index.php">Añadir</a></li>
+                    <li><a href="alta.php">Añadir</a></li>
                     <li><a href="mostrar.php">Mostrar Empleados</a></li>
                     <li><a href="modificar.php">Buscar</a></li>
                 </ul>
