@@ -63,12 +63,32 @@
                 $Nombre = $_POST['nombre'];
                 $Correo = $_POST['email'];
                 $Telefono = $_POST['telefono'];
+                
 
                 $consulta = "UPDATE empleados SET DNI = '$DNI', Nombre = '$Nombre', Correo = '$Correo', Telefono='$Telefono' WHERE ID ='$ID';";
                 $resultado = mysqli_query($db->connection,$consulta);
+
+                function mensaje(){
+                    echo '<div class="alert alert-success">Los datos han sido modificados correctamente </div>';
+                }
+            }
+           
+
+        }
+        //Borrar datos
+        public function borrarDatos($id){
+            global $db;
+            $consulta = "DELETE FROM empleados WHERE ID ='$id'; "; 
+            $resultado = mysqli_query($db->connection,$consulta);
+
+            if($resultado){
+                return true;
+            }else{
+                return false;
             }
 
         }
+        
 
     }
 ?>

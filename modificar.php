@@ -46,8 +46,9 @@
                                         <input type="tel" name="telefono" value="<?php echo $datos['Telefono']; ?>" placeholder="Telefono"  pattern="[0-9]{9}" class="form-control mb-2" required>
     
                                         <div class="card-footer">
-                                            <button class="btn btn-success" name="Editar">Editar</button>  
-                                            </div> 
+                                            <button class="btn btn-success" name="Editar">Editar</button>
+                                            <?php mensaje(); ?>   
+                                        </div> 
                                         </form>
                                 </div>
                             </div>
